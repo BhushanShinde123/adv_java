@@ -1,5 +1,7 @@
 # adv_java
 ---------------------------------------------------
+localhost:8080/swagger-ui.html
+
 
 File - New - Spring Starter Project - 
 				Name -
@@ -128,12 +130,11 @@ public class StudentController {
 
 	}
 	
-//	@DeleteMapping("/{empId}")
-//	public ApiResponses deleteStudent(@PathVariable Long empId) {
-//		return new ApiResponses(stu.deleteStudent(empId));
-//	}
-	
-	
+	@DeleteMapping("/{empId}")
+	public void deleteStudent(@PathVariable Long empId) {
+		stu.deleteStudent(empId);
+	}
+
 	@GetMapping("/{empId}")
 	public Student getStdDetails(@PathVariable Long empId) {
 		return stu.fetchStudent(empId);
